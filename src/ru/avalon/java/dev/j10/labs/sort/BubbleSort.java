@@ -21,18 +21,19 @@ public class BubbleSort implements Sort {
         /*
          * TODO(Студент): Реализовать метод sort класса BubbleSort
          */
-        int x;
-        try{ 
-            for(int i = 0; i < array.length; i++) {
-                for(int j = array.length-1; j > i; j--) {
-                    if (array[j-1] > array[j]) {
-                        x = array[j-1]; 
-                        array[j-1] = array[j]; 
-                        array[j] = x;
-                    }
+        if (array == null || array.length == 0 ){
+            throw new IllegalArgumentException("Array is empty or null");    
+        }
+        int x;        
+        for(int i = 0; i < array.length; i++) {
+            for(int j = array.length-1; j > i; j--) {
+                if (array[j-1] > array[j]) {
+                    x = array[j-1]; 
+                    array[j-1] = array[j]; 
+                    array[j] = x;
                 }
             }
         }
-        catch(NullPointerException e){return;}
+        
     }
 }

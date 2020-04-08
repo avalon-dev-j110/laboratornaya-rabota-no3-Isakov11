@@ -29,13 +29,16 @@ public class FibonacciInitializer implements Initializer {
         /*
          * TODO(Студент): Реализовать метод initialize класса FibonacciInitializer
          */
-        try{
-            array[0] = 1;
-            array[1] = 1;
+        if (array == null || array.length == 0){
+            throw new IllegalArgumentException("Array is empty or null");    
+        }        
+        if (array.length >= 1){array[0] = 1;}        
+        if (array.length >= 2){array[1] = 1;}
+        if (array.length > 2){
             for(int i = 2; i < array.length; i++){
                 array[i]=array[i-2]+array[i-1];
             }
         }
-        catch(NullPointerException e){return;}
+        
     }
 }
